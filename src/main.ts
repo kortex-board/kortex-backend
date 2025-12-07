@@ -1,8 +1,8 @@
 import { ValidationPipe } from "@nestjs/common";
+import { ConfigService } from "@nestjs/config";
 import { NestFactory } from "@nestjs/core";
 import { DocumentBuilder, SwaggerModule } from "@nestjs/swagger";
 import { AppModule } from "./app.module";
-import { ConfigService } from "@nestjs/config";
 
 async function bootstrap() {
 	const app = await NestFactory.create(AppModule);
@@ -13,6 +13,8 @@ async function bootstrap() {
 	app.enableCors({
 		origin: configService.get<string>("FRONTEND_URL"),
 	});
+
+	app.setGlobalPrefix("v1");
 
 	const config = new DocumentBuilder()
 		.setTitle("Kortex API")
