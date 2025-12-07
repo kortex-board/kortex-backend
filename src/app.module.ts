@@ -1,10 +1,28 @@
 import { Module } from "@nestjs/common";
-import { AppController } from "./app.controller";
-import { AppService } from "./app.service";
+import { ConfigModule } from "@nestjs/config";
+import * as Joi from "joi";
+import { AuthModule } from "./auth/auth.module";
+import { BoardModule } from "./board/board.module";
+import { DatabaseModule } from "./database/database.module";
+import { UserModule } from "./user/user.module";
 
 @Module({
-	imports: [],
-	controllers: [AppController],
-	providers: [AppService],
+	imports: [
+		ConfigModule.forRoot({
+			isGlobal: true,
+			validationSchema: Joi.object({
+				JWT_SECRET: Joi.string().required(),
+				JWT_EXPIRATION_TIME: Joi.number().required(),
+				DATABASE_URL: Joi.string().required(),
+				FRONTEND_URL: Joi.string().required(),
+			}),
+		}),
+		AuthModule,
+		UserModule,
+		DatabaseModule,
+		BoardModule,
+	],
+	controllers: [],
+	providers: [],
 })
 export class AppModule {}
