@@ -16,8 +16,7 @@ export class AuthService {
 	async validateUser(email: string, pass: string): Promise<UserPayload | null> {
 		const user = await this.userService.findByEmail(email);
 		if (user && (await bcrypt.compare(pass, user.password))) {
-			// biome-ignore lint/correctness/noUnusedVariables: password is intentionally unused
-			const { password, ...result } = user;
+			const { ...result } = user;
 			return result;
 		}
 		return null;

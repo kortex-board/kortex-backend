@@ -4,6 +4,8 @@ import * as Joi from "joi";
 import { AuthModule } from "./auth/auth.module";
 import { BoardModule } from "./board/board.module";
 import { DatabaseModule } from "./database/database.module";
+import { ListModule } from "./list/list.module";
+import { TaskModule } from "./task/task.module";
 import { UserModule } from "./user/user.module";
 
 @Module({
@@ -21,6 +23,8 @@ import { UserModule } from "./user/user.module";
 		UserModule,
 		DatabaseModule,
 		BoardModule,
+		ListModule,
+		TaskModule,
 	],
 	controllers: [],
 	providers: [],
