@@ -77,28 +77,28 @@ Follow these instructions to set up and run the project locally.
 
 ### Running the Application
 
-```bash
-# development
-$ npm run start
+```sh
+# Development
+npm run start
 
-# watch mode
-$ npm run start:dev
+# Watch mode
+npm run start:dev
 
-# production mode
-$ npm run start:prod
+# Production mode
+npm run start:prod
 ```
 
 ## Testing
 
-```bash
-# unit tests
-$ npm run test
+```sh
+# Unit tests
+npm run test
 
-# e2e tests
-$ npm run test:e2e
+# E2e tests
+npm run test:e2e
 
-# test coverage
-$ npm run test:cov
+# Test coverage
+npm run test:cov
 ```
 
 ## License
