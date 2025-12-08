@@ -1,29 +1,81 @@
-# Kortex
+# Kortex Backend
 
-Kortex is a web-based Kanban board application designed for streamlined project management. It provides a visual and intuitive interface to help users organize tasks, track progress, and collaborate effectively.
+This is the backend for Kortex, a web-based Kanban board application. It provides the API for the frontend, handling data storage, user authentication, and business logic.
 
-## Installation
+## Features
+
+- **RESTful API:** A complete API for managing boards, lists, and tasks.
+- **User Authentication:** JWT-based authentication to secure the API.
+- **Database Management:** Uses Prisma to manage the PostgreSQL database.
+
+## Technologies
+
+- [NestJS](https://nestjs.com/)
+- [Prisma](https://www.prisma.io/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [PostgreSQL](https://www.postgresql.org/)
+- [Docker](https://www.docker.com/)
+- [Passport](https://docs.nestjs.com/techniques/authentication) for authentication strategies
+- [Jest](https://jestjs.io/) for testing
+
+## Project Structure
+
+The project follows a standard NestJS application structure:
+
+- `src/`: Contains the main source code.
+  - `auth/`: Handles user authentication.
+  - `board/`: Manages boards.
+  - `list/`: Manages lists.
+  - `task/`: Manages tasks.
+  - `user/`: Manages users.
+  - `database/`: Contains the Prisma service.
+- `prisma/`: Contains the database schema and migrations.
+- `test/`: Contains end-to-end tests.
+
+## Getting Started
+
+Follow these instructions to set up and run the project locally.
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) (version specified in `package.json`)
+- [Docker](https://www.docker.com/)
+
+### Installation
 
 1. Clone the repository:
 
     ```sh
-    git clone https://github.com/your-username/kortex-frontend.git
+    git clone https://github.com/kortex-board/kortex-backend
     ```
 
 2. Navigate to the project directory:
 
     ```sh
-    cd kortex-frontend
+    cd kortex-backend
     ```
 
 3. Install the dependencies:
-  
+
     ```sh
-    # Install dependencies
-    $ npm install
+    npm install
     ```
 
-## Compile and run the project
+### Database Setup
+
+1. Start the PostgreSQL database using Docker:
+
+    ```sh
+    docker-compose up -d
+    ```
+
+2. Apply the database migrations:
+
+    ```sh
+    npx prisma migrate dev
+    ```
+
+### Running the Application
 
 ```bash
 # development
@@ -36,7 +88,7 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
-## Run tests
+## Testing
 
 ```bash
 # unit tests
@@ -49,25 +101,9 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
-## Database Setup
+## License
 
-```bash
-# Generate and apply initial database migration
-npx prisma migrate dev --name init
-
-# Generate Prisma Client for database access
-npx prisma generate
-
-# Reset database
-npx prisma migrate reset
-```
-
-## Swagger API
-
-```bash
-# Access Swagger API
-$ http://localhost:3000/api
-```
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Contact
 
