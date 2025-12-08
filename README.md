@@ -2,12 +2,26 @@
 
 Kortex is a web-based Kanban board application designed for streamlined project management. It provides a visual and intuitive interface to help users organize tasks, track progress, and collaborate effectively.
 
-## Project setup
+## Installation
 
-```bash
-# Install all project dependencies
-$ npm install
-```
+1. Clone the repository:
+
+    ```sh
+    git clone https://github.com/your-username/kortex-frontend.git
+    ```
+
+2. Navigate to the project directory:
+
+    ```sh
+    cd kortex-frontend
+    ```
+
+3. Install the dependencies:
+  
+    ```sh
+    # Install dependencies
+    $ npm install
+    ```
 
 ## Compile and run the project
 
@@ -54,3 +68,17 @@ npx prisma migrate reset
 # Access Swagger API
 $ http://localhost:3000/api
 ```
+
+## Contact
+
+- GitHub: [kortex-board](https://github.com/kortex-board)
+
+## Acknowledgements
+
+- [NestJS](https://nestjs.com/)
+- [Prisma](https://www.prisma.io/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [JWT](https://jwt.io/)
+- [Passport](https://docs.nestjs.com/techniques/authentication)
+- [Docker](https://www.docker.com/)
+- [Biome](https://biomejs.dev/)
