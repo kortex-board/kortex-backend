@@ -46,9 +46,11 @@ npx prisma generate
 
 # Reset database
 npx prisma migrate reset
+```
 
 ## Swagger API
 
 ```bash
+# Access Swagger API
 $ http://localhost:3000/api
 ```
