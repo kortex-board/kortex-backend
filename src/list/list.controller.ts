@@ -6,11 +6,17 @@ import {
 	Param,
 	Patch,
 	Post,
+	UseGuards,
 } from "@nestjs/common";
+import { ApiBearerAuth, ApiTags } from "@nestjs/swagger";
+import { JwtAuthGuard } from "src/auth/guards/jwt-auth.guard";
 import type { CreateListDto } from "./dto/create-list.dto";
 import type { UpdateListDto } from "./dto/update-list.dto";
 import { ListService } from "./list.service";
 
+@ApiTags("List")
+@ApiBearerAuth()
+@UseGuards(JwtAuthGuard)
 @Controller("list")
 export class ListController {
 	constructor(private readonly listService: ListService) {}

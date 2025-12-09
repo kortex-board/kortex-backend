@@ -1,9 +1,7 @@
+import { UserFromJwt } from "./user-from-jwt.d";
+
 declare namespace Express {
 	export interface Request {
-		user?: {
-			userId: string;
-			username: string;
-			name: string;
-		};
+		user?: UserFromJwt;
 	}
 }
