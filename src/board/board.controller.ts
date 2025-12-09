@@ -16,7 +16,7 @@ import type { CreateBoardDto } from "./dto/create-board.dto";
 import type { UpdateBoardDto } from "./dto/update-board.dto";
 
 @ApiBearerAuth()
-@ApiTags("board")
+@ApiTags("Board")
 @UseGuards(JwtAuthGuard)
 @Controller("board")
 export class BoardController {
